@@ -1,0 +1,8 @@
+{
+  "name": "expo-trpc-firebase-auth-starter",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
