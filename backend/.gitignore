@@ -2,3 +2,5 @@ node_modules
 .env
 dist
 firebase-admin.json
+prisma/dev.db
+prisma/dev.db-journal

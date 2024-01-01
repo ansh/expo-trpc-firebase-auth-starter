@@ -85,7 +85,7 @@ export function AuthProvider(props: React.PropsWithChildren) {
           text2: `Verification code has been sent to your phone.`,
         });
         setIsOTPSent(true);
-        return Promise.resolve(verificationId);
+        return verificationId;
       } catch (err: any) {
         Toast.show({
           type: 'error',
