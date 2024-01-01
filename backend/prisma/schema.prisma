@@ -5,10 +5,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// WHEN USING PLANETSCALE
+// datasource db {
+//   provider     = "mysql"
+//   url          = env("DATABASE_URL")
+//   relationMode = "prisma"
+// }
+
+// WHEN USING SQLITE
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model User {
