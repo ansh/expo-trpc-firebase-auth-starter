@@ -9,9 +9,9 @@ import {
   View,
 } from 'react-native';
 
-import { useAuth } from '../../lib/auth/AuthContext';
-
+import { useAuth } from '@/lib/auth/AuthContext';
 import { AppleLoginButton } from '@/lib/auth/apple';
+import { GoogleLoginButton } from '@/lib/auth/google';
 
 const SignIn = () => {
   const [phoneNumber, setPhoneNumber] = useState<string>();
@@ -41,6 +41,11 @@ const SignIn = () => {
         <AppleLoginButton provider="firebase" />
         <Text>Login with Supabase</Text>
         <AppleLoginButton provider="supabase" />
+
+        <Text>Login with Firebase</Text>
+        <GoogleLoginButton provider="firebase" />
+        <Text>Login with Supabase</Text>
+        <GoogleLoginButton provider="supabase" />
 
         {isLoading ? (
           <ActivityIndicator />

@@ -22,11 +22,16 @@ This starter sets up a monorepo exactly the way I like working on projects. That
 
 ### Features
 - [x] Authentication
-  - [x] Phone auth with Firebase
-    - [ ] Country picker
-  - [ ] Apple auth
-  - [ ] Google auth
+  - [x] Firebase
+    - [ ] Phone
+    - [x] Apple
+    - [ ] Google
+  - [ ] Supabase
+    - [ ] Phone
+    - [ ] Apple
+    - [ ] Google
   - [ ] Better OTP input like https://github.com/anday013/react-native-otp-entry
+  - [ ] Country picker for phone auth
   - [ ] Better Phone number input with formatting 
 - [x] Navigation
   - [x] Tabs layout with React Navigation
