@@ -11,6 +11,8 @@ import {
 
 import { useAuth } from '../../lib/auth/AuthContext';
 
+import { AppleLoginButton } from '@/lib/auth/apple';
+
 const SignIn = () => {
   const [phoneNumber, setPhoneNumber] = useState<string>();
   const { sendOTP, renderRecaptcha, isLoading } = useAuth();
@@ -34,6 +36,11 @@ const SignIn = () => {
             autoFocus
           />
         </View>
+
+        <Text>Login with Firebase</Text>
+        <AppleLoginButton provider="firebase" />
+        <Text>Login with Supabase</Text>
+        <AppleLoginButton provider="supabase" />
 
         {isLoading ? (
           <ActivityIndicator />
