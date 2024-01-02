@@ -12,16 +12,21 @@ WebBrowser.maybeCompleteAuthSession();
 
 const useGoogleAuth = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [, fullResult, attemptGoogleSignIn] = Google.useIdTokenAuthRequest({
-    androidClientId:
-      '665412012590-uov3i6elqe15q3uc8ud0d2588ve9scua.apps.googleusercontent.com',
-    expoClientId:
-      '665412012590-770cofm2lb9akcb280toq593brl8amrm.apps.googleusercontent.com',
-    iosClientId:
-      '665412012590-770cofm2lb9akcb280toq593brl8amrm.apps.googleusercontent.com',
-    selectAccount: true,
-    scopes: ['profile', 'email', 'openid'],
-  });
+  const [, fullResult, attemptGoogleSignIn] = Google.useIdTokenAuthRequest(
+    {
+      expoClientId:
+        '665412012590-770cofm2lb9akcb280toq593brl8amrm.apps.googleusercontent.com',
+      androidClientId:
+        '665412012590-uov3i6elqe15q3uc8ud0d2588ve9scua.apps.googleusercontent.com',
+      iosClientId:
+        '665412012590-vlai1gd6237lad8obc2k9h6ln5uo9qs3.apps.googleusercontent.com',
+      selectAccount: true,
+      scopes: ['profile', 'email', 'openid'],
+    },
+    {
+      native: 'exp://172.19.248.52:8081',
+    }
+  );
 
   // TODO: Figure out if this is required
   // useEffect(() => {
