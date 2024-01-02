@@ -39,12 +39,9 @@ const SignIn = () => {
 
         <Text>Login with Firebase</Text>
         <AppleLoginButton provider="firebase" />
-        <Text>Login with Supabase</Text>
-        <AppleLoginButton provider="supabase" />
-
-        <Text>Login with Firebase</Text>
         <GoogleLoginButton provider="firebase" />
         <Text>Login with Supabase</Text>
+        <AppleLoginButton provider="supabase" />
         <GoogleLoginButton provider="supabase" />
 
         {isLoading ? (

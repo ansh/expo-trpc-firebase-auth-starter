@@ -17,6 +17,8 @@ const useGoogleAuth = () => {
       '665412012590-uov3i6elqe15q3uc8ud0d2588ve9scua.apps.googleusercontent.com',
     expoClientId:
       '665412012590-770cofm2lb9akcb280toq593brl8amrm.apps.googleusercontent.com',
+    iosClientId:
+      '665412012590-770cofm2lb9akcb280toq593brl8amrm.apps.googleusercontent.com',
     selectAccount: true,
     scopes: ['profile', 'email', 'openid'],
   });

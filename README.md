@@ -25,7 +25,7 @@ This starter sets up a monorepo exactly the way I like working on projects. That
   - [x] Firebase
     - [ ] Phone
     - [x] Apple
-    - [ ] Google
+    - [x] Google
   - [ ] Supabase
     - [ ] Phone
     - [ ] Apple
@@ -49,3 +49,13 @@ This starter sets up a monorepo exactly the way I like working on projects. That
   - [ ] Custom font with primitive `<Text>` component
   - [ ] Primitive `<Button>` component with animations
   - [ ] Simple opinionated `<Box>` component
+- [ ] Components
+  - [ ] Basic simple Reanimated Bottom Sheet
+  - [ ] Simple Reanimated Toast
+- [ ] Sentry support with proper sourcecode upload
+- [ ] RevenueCat support with 2 subscription tiers
+- [ ] Notifications
+  - [ ] Backend notification service to send notifications in real-time
+  - [ ] Simple webpage to test and send notifications
+  - [ ] Notification handling in the frontend
+  - [ ] Locally scheduled notifications in the frontend
