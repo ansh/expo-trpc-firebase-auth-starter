@@ -6,6 +6,16 @@ import { AuthProvider } from '../lib/auth/AuthContext';
 import ToastProvider from '@/components/Toast';
 import { queryClient, trpcQuery, trpcQueryClient } from '@/lib/config/api';
 
+export {
+  // Catch any errors thrown by the Layout component
+  ErrorBoundary,
+} from 'expo-router';
+
+export const unstable_settings = {
+  // Ensure that reloading on `/modal` keeps a back button present
+  initialRouteName: '(app)/(tabs)',
+};
+
 export default function Root() {
   return (
     <AuthProvider>

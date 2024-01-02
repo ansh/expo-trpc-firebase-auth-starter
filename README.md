@@ -26,6 +26,8 @@ This starter sets up a monorepo exactly the way I like working on projects. That
     - [ ] Country picker
   - [ ] Apple auth
   - [ ] Google auth
+  - [ ] Better OTP input like https://github.com/anday013/react-native-otp-entry
+  - [ ] Better Phone number input with formatting 
 - [x] Navigation
   - [x] Tabs layout with React Navigation
   - [x] Auth flow handled
@@ -35,7 +37,7 @@ This starter sets up a monorepo exactly the way I like working on projects. That
   - [x] Simpe backend structure with routers and services
   - [ ] Error handling
     - [x] Backend
-    - [ ] Frontend with React Error Boundary
+    - [x] Frontend with React Error Boundary
 - [ ] Styling
   - [x] Tailwind
   - [ ] Native iOS colors
