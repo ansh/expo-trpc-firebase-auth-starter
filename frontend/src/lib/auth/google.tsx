@@ -7,6 +7,7 @@ import Toast from 'react-native-toast-message';
 
 import { AuthProviderService } from './apple';
 import { firebaseAuth } from '../config/firebase';
+import { supabase } from '../config/supabase';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -57,18 +58,17 @@ const useGoogleAuth = () => {
               GoogleAuthProvider.credential(response.params?.id_token)
             );
             break;
-          case 'supabase':
-            // TODO: Implement Supabase Google Auth
-            // const {
-            //   data: { session },
-            // } = await supabase.auth.signInWithIdToken({
-            //   provider: 'google',
-            //   token: response.params.id_token,
-            // });
-            // if (session) {
-            //   await supabase.auth.setSession({ ...session });
-            // }
+          case 'supabase': {
+            const res = await supabase.auth.signInWithIdToken({
+              provider: 'google',
+              token: response.params.id_token,
+            });
+            const session = res.data.session;
+            if (session) {
+              await supabase.auth.setSession({ ...session });
+            }
             break;
+          }
         }
       }
     } catch (err: any) {
