@@ -2,11 +2,12 @@
   "name": "frontend",
   "version": "1.0.0",
   "scripts": {
-    "android": "expo start --android",
     "format": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix && prettier 'src/**/*.{js,jsx,ts,tsx,json}' --write",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "start": "expo start",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "prebuild": "expo prebuild --clean"
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
@@ -48,7 +49,8 @@
     "react-native-toast-message": "^2.1.8",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-web": "~0.19.6",
-    "react-native-webview": "13.2.2"
+    "react-native-webview": "13.2.2",
+    "expo-splash-screen": "~0.20.5"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^0.5.5",
