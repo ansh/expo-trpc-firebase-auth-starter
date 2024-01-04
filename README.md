@@ -23,7 +23,7 @@ This starter sets up a monorepo exactly the way I like working on projects. That
 ### Features
 - [x] Authentication
   - [x] Firebase
-    - [ ] Phone
+    - [x] Phone
     - [x] Apple
     - [x] Google
   - [ ] Supabase
@@ -43,15 +43,7 @@ This starter sets up a monorepo exactly the way I like working on projects. That
   - [ ] Error handling
     - [x] Backend
     - [x] Frontend with React Error Boundary
-- [ ] Styling
-  - [x] Tailwind
-  - [ ] Native iOS colors
-  - [ ] Custom font with primitive `<Text>` component
-  - [ ] Primitive `<Button>` component with animations
-  - [ ] Simple opinionated `<Box>` component
-- [ ] Components
-  - [ ] Basic simple Reanimated Bottom Sheet
-  - [ ] Simple Reanimated Toast
+
 - [ ] Sentry support with proper sourcecode upload
 - [ ] RevenueCat support with 2 subscription tiers
 - [ ] Notifications
@@ -59,3 +51,12 @@ This starter sets up a monorepo exactly the way I like working on projects. That
   - [ ] Simple webpage to test and send notifications
   - [ ] Notification handling in the frontend
   - [ ] Locally scheduled notifications in the frontend
+- [ ] - [ ] Styling
+  - [x] Tailwind
+  - [ ] Native iOS colors
+  - [ ] Components
+    - [ ] Basic simple Reanimated Bottom Sheet
+    - [ ] Simple Reanimated Toast
+    - [ ] Custom font with primitive `<Text>` component
+    - [ ] Primitive `<Button>` component with animations
+    - [ ] Simple opinionated `<Box>` component
