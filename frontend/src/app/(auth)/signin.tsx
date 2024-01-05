@@ -4,6 +4,7 @@ import {
   ActivityIndicator,
   Button,
   KeyboardAvoidingView,
+  ScrollView,
   Text,
   TextInput,
   View,
@@ -18,7 +19,7 @@ const SignIn = () => {
   const { sendOTP, renderRecaptcha, isLoading } = useAuth();
 
   return (
-    <View className="h-full">
+    <ScrollView className="h-full">
       <KeyboardAvoidingView className="flex h-full flex-col items-center justify-center">
         <Text className="text-2xl font-medium text-center">
           What's your phone number?
@@ -36,14 +37,6 @@ const SignIn = () => {
             autoFocus
           />
         </View>
-
-        <Text>Login with Firebase</Text>
-        <AppleLoginButton provider="firebase" />
-        <GoogleLoginButton provider="firebase" />
-        <Text>Login with Supabase</Text>
-        <AppleLoginButton provider="supabase" />
-        <GoogleLoginButton provider="supabase" />
-
         {isLoading ? (
           <ActivityIndicator />
         ) : (
@@ -59,9 +52,17 @@ const SignIn = () => {
             disabled={!phoneNumber || phoneNumber.length < 10}
           />
         )}
+
+        <Text>Login with Firebase</Text>
+        <AppleLoginButton provider="firebase" />
+        <GoogleLoginButton provider="firebase" />
+        <Text>Login with Supabase</Text>
+        <AppleLoginButton provider="supabase" />
+        <GoogleLoginButton provider="supabase" />
+
         {renderRecaptcha()}
       </KeyboardAvoidingView>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -23,6 +23,7 @@ model User {
   phoneNumber         String  @unique
   onboardingCompleted Boolean @default(false)
   name                String?
+  isPro               Boolean @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

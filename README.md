@@ -45,7 +45,11 @@ This starter sets up a monorepo exactly the way I like working on projects. That
     - [x] Frontend with React Error Boundary
 
 - [ ] Sentry support with proper sourcecode upload
-- [ ] RevenueCat support with 2 subscription tiers
+- [ ] RevenueCat
+  - [x] Setting up RevenueCat app for iOS
+  - [ ] For Android
+  - [ ] Pro subscription tiers setup
+  - [ ] Able to subscribe to pro tier in app and see it in RevenueCat dashboard as well as in the database
 - [ ] Notifications
   - [ ] Backend notification service to send notifications in real-time
   - [ ] Simple webpage to test and send notifications

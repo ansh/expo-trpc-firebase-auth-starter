@@ -62,6 +62,7 @@ export function AuthProvider(props: React.PropsWithChildren) {
           phoneNumber: userData.phoneNumber!,
           onboardingCompleted: userDataFromDb.onboardingCompleted,
           name: userDataFromDb.name,
+          isPro: userDataFromDb.isPro,
         });
       }
       setIsLoading(false);
@@ -125,6 +126,7 @@ export function AuthProvider(props: React.PropsWithChildren) {
           phoneNumber: firebaseUser.phoneNumber!, // we know phone number exists, because that is the only auth method right now
           onboardingCompleted: createNewUserIfRequired.data.onboardingCompleted,
           name: createNewUserIfRequired.data.name,
+          isPro: createNewUserIfRequired.data.isPro,
         });
         Toast.show({
           type: 'success',

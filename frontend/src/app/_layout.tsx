@@ -5,6 +5,7 @@ import { AuthProvider } from '../lib/auth/AuthContext';
 
 import ToastProvider from '@/components/Toast';
 import { queryClient, trpcQuery, trpcQueryClient } from '@/lib/config/api';
+import RevenueCatProvider from '@/lib/config/revenuecat';
 
 export {
   // Catch any errors thrown by the Layout component
@@ -21,8 +22,10 @@ export default function Root() {
     <AuthProvider>
       <trpcQuery.Provider client={trpcQueryClient} queryClient={queryClient}>
         <QueryClientProvider client={queryClient}>
-          <Slot />
-          <ToastProvider />
+          <RevenueCatProvider>
+            <Slot />
+            <ToastProvider />
+          </RevenueCatProvider>
         </QueryClientProvider>
       </trpcQuery.Provider>
     </AuthProvider>
