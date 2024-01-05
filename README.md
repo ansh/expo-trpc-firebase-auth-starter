@@ -26,10 +26,10 @@ This starter sets up a monorepo exactly the way I like working on projects. That
     - [x] Phone
     - [x] Apple
     - [x] Google
-  - [ ] Supabase
+  - [x] Supabase
     - [ ] Phone
-    - [ ] Apple
-    - [ ] Google
+    - [x] Apple
+    - [x] Google
   - [ ] Better OTP input like https://github.com/anday013/react-native-otp-entry
   - [ ] Country picker for phone auth
   - [ ] Better Phone number input with formatting 
@@ -47,15 +47,16 @@ This starter sets up a monorepo exactly the way I like working on projects. That
 - [ ] Sentry support with proper sourcecode upload
 - [ ] RevenueCat
   - [x] Setting up RevenueCat app for iOS
-  - [ ] For Android
-  - [ ] Pro subscription tiers setup
+  - [x] For Android
+  - [x] Pro subscription tiers setup
   - [ ] Able to subscribe to pro tier in app and see it in RevenueCat dashboard as well as in the database
+  - [ ] RevenueCat webhook with backend sync
 - [ ] Notifications
   - [ ] Backend notification service to send notifications in real-time
   - [ ] Simple webpage to test and send notifications
   - [ ] Notification handling in the frontend
   - [ ] Locally scheduled notifications in the frontend
-- [ ] - [ ] Styling
+- [ ] Styling
   - [x] Tailwind
   - [ ] Native iOS colors
   - [ ] Components

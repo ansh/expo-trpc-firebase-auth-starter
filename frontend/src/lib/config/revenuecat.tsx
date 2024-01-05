@@ -85,15 +85,13 @@ const RevenueCatProvider = ({ children }: { children: React.ReactNode }) => {
       if (pack.identifier === '$rc_monthly') {
         setIsProTier(true);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('purchasePackage', error);
-      if (error instanceof Error) {
-        Toast.show({
-          type: 'error',
-          text1: 'Error',
-          text2: error.message,
-        });
-      }
+      Toast.show({
+        type: 'error',
+        text1: 'Error',
+        text2: error.message,
+      });
     }
   };
 
