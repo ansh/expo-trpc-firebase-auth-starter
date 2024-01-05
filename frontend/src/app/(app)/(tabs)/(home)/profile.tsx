@@ -8,7 +8,7 @@ import ProductsList from '@/lib/iap/ProductsList';
 
 export default function ProfileScreen() {
   const { user, signOut } = useAuth();
-  const { packages } = useRevenueCat();
+  const { isPro } = useRevenueCat();
 
   return (
     <View className="items-center flex-1 justify-center">
@@ -19,7 +19,7 @@ export default function ProfileScreen() {
 
       <Text>Phone Number: {user?.phoneNumber}</Text>
       <Text>User ID: {user?.id}</Text>
-      <Text>Is Pro Subscription: {user?.isPro ? 'TRUE' : 'FALSE'}</Text>
+      <Text>Is Pro Subscription: {isPro ? 'TRUE' : 'FALSE'}</Text>
       <ProductsList />
 
       <View className="h-[1px] my-7 w-4/5 bg-gray-200" />

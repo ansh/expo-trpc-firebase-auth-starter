@@ -17,12 +17,14 @@ type RevenueCatProviderProps = {
   purchasePackage: (pack: PurchasesPackage) => void;
   restorePurchases: () => void;
   packages: PurchasesPackage[];
+  isPro: boolean;
 };
 
 const RevenueCatContext = React.createContext<RevenueCatProviderProps>({
   purchasePackage: () => {},
   restorePurchases: () => {},
   packages: [],
+  isPro: false,
 });
 
 export const useRevenueCat = () => {
@@ -38,7 +40,7 @@ export const useRevenueCat = () => {
 };
 
 const RevenueCatProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isProTier, setIsProTier] = React.useState(false);
+  const [isPro, setIsPro] = React.useState(false);
   const [isReady, setIsReady] = React.useState(false);
   const [packages, setPackages] = React.useState<PurchasesPackage[]>([]);
   const { user } = useAuth();
@@ -61,18 +63,16 @@ const RevenueCatProvider = ({ children }: { children: React.ReactNode }) => {
       if (__DEV__) Purchases.setLogLevel(LOG_LEVEL.DEBUG);
 
       await loadOfferings();
-
-      Purchases.addCustomerInfoUpdateListener((info) => {
-        updateCustomerInfo(info);
-      });
     }
 
     setup();
+    Purchases.addCustomerInfoUpdateListener((info) => {
+      updateCustomerInfo(info);
+    });
   }, [user]);
 
   const loadOfferings = async () => {
     const offerings = await Purchases.getOfferings();
-    console.log('offerings', offerings);
     if (offerings.current) {
       setPackages(offerings.current.availablePackages);
     }
@@ -83,7 +83,7 @@ const RevenueCatProvider = ({ children }: { children: React.ReactNode }) => {
       const res = await Purchases.purchasePackage(pack);
       console.log('purchasedPackage', res);
       if (pack.identifier === '$rc_monthly') {
-        setIsProTier(true);
+        setIsPro(true);
       }
     } catch (error: any) {
       console.error('purchasePackage', error);
@@ -98,7 +98,10 @@ const RevenueCatProvider = ({ children }: { children: React.ReactNode }) => {
   const restorePurchases = async () => {};
 
   const updateCustomerInfo = async (info: CustomerInfo) => {
-    console.log('info', info.activeSubscriptions);
+    console.log('updateCustomerInfo', info);
+    if (info.activeSubscriptions.length > 0) {
+      setIsPro(true);
+    }
   };
 
   return (
@@ -107,6 +110,7 @@ const RevenueCatProvider = ({ children }: { children: React.ReactNode }) => {
         purchasePackage,
         restorePurchases,
         packages,
+        isPro,
       }}>
       {children}
     </RevenueCatContext.Provider>
